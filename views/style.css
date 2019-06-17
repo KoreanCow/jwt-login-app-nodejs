@@ -1,0 +1,56 @@
+@font-face{
+  font-family: 'baemin';
+  src: url('./BMJUA_ttf.ttf') format('truetype');
+}
+body{
+  background-color: lightgray;
+  display: flex;
+  width: 100%;
+  height:800px;
+
+  justify-content: center;
+}
+.container{
+  width: 250px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  flex-flow: column;
+}
+h1{
+  margin-left: 40px;
+}
+
+p{
+  margin-left: 30px;
+  font-size: 35px;
+  font-family: baemin
+}
+.input-group{
+  font-size:  15px;
+  margin-left: 30px;
+  display: flex;
+  justify-content: space-around;
+
+  margin-top: 10px;
+}
+input{
+  border: none;
+  background-color: rgb(238, 238, 238);
+  width: 60%;
+  height: 20px;
+  box-shadow: lightgray 0px 1px 0px 0px;
+  margin-top: 10px;
+}
+.btn{
+border: none;
+background-color: skyblue;
+color: white;
+
+}
+.bottom{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  margin-top: 30px;
+}

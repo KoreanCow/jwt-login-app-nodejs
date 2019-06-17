@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>회원가입</title>
+
+</head>
+
+<body>
+
+  <div class='container'>
+    <h1>횐가입
+    </h1>
+    <div class="timeline">
+      <form id="join-form" action = "/register" method= "post">
+        <div class="input-group">
+          <label for="email">이메일</label>
+          <input id="email" type="email" name="email" />
+        </div>
+        <div class="input-group">
+          <label for="nick">닉네임</label>
+          <input id="nick" type="text" name="nick" />
+        </div>
+        <div class="input-group">
+          <label for="password">비밀번호</label>
+          <input id="password" type="password" name="password" />
+        </div>
+        <div class="input-group">
+          <a class="btn" id="join" href="./index.html">뒤로가기</a>
+          <button class="btn" id="login" type="submit">회원가입</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    $("#login").click((e) => {
+      e.preventDefault();
+
+      
+
+      let email = $("#email").val();
+      let password = $("#password").val();
+      let nick = $("#nick").val();
+
+      $.ajax({
+        type: "POST",
+        url: "/register",
+        data: { nick: nick, email: email, password: password },
+        dataType: "JSON",
+        success: () => {
+          console.log('통신 성공!!');
+        },
+        error: (xhr, status, error) => {
+          console.log(error);
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
